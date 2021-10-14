@@ -47,6 +47,7 @@
     <p>Click on the squares to search for wild life.</p>
     <p id="tries">Number of tries is zero.</p>
     <p id="distance">Distance is unknown</p>
+    <div class="btn default-color bold col-md-5 shadow-lg p-3 mb-5 bg-white rounded hover" onclick="reset()">Reset</div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2"><img class="w3-round" src="bush.jpg" width="100" height="100" id="0" onclick="check(0)"></div>
@@ -114,6 +115,19 @@
             document.getElementById("tries").innerHTML = "Number of tries : " + triesCount;
             distanceOfAnimal = distance(position, animalLocation);
             document.getElementById("distance").innerHTML = "Distance is " + distanceOfAnimal;
+        }
+
+        function reset() {
+            triesCount = 0;
+            animalLocation = Math.round( Math.random() * (23 - 0) + 0);
+            document.getElementById("tries").innerHTML = "Number of triesis zero";
+            distanceOfAnimal = "unknown"
+            document.getElementById("distance").innerHTML = "Distance is " + distanceOfAnimal;
+            for (var i = 0; i < 24; i++) {
+           
+            document.getElementById(ids_array[i]).src = "bush.jpg";
+        }
+           
         }
 
         function distance(pos1, pos2)
